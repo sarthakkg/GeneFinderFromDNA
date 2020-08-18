@@ -7,44 +7,40 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class UserInterface2 {
+public class Application {
 	public static void main(String[] args) {
+		// created the Gene Finder GUI Window
 		JFrame frame = new JFrame();
-
-		final int FRAME_WIDTH = 1000;
-		final int FRAME_HEIGHT = 800;
-		frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+		frame.setSize(1000, 800);
 		frame.setTitle("Gene Finder");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		final int DNA_FIELD_LENGTH = 30;
-		JTextField DNAField = new JTextField(DNA_FIELD_LENGTH);
+		// creates the text field for user to enter DNA string
 		JLabel DNALabel = new JLabel("DNA: ");
+		JTextField DNAField = new JTextField(30);
 
+		// creates the label for "Genes: "
 		JLabel resultLabel = new JLabel("Genes: ");
-
+		
 		JPanel panel = new JPanel();
-		panel.setPreferredSize(new Dimension(800, 800));
 
-		panel.setLocation(0, 0);
+		JTextArea textArea = new JTextArea(45, 24);
+		JScrollPane scrollPane = new JScrollPane(textArea);
+
 		panel.setBackground(Color.cyan);
 
 		panel.add(DNALabel);
 		panel.add(DNAField);
 		panel.add(resultLabel);
+		panel.add(scrollPane);
 
 		frame.add(panel);
 		frame.setVisible(true);
 
-		JTextArea textArea = new JTextArea(45, 18);
-		JScrollPane scrollPane = new JScrollPane(textArea);
-		panel.add(scrollPane);
-		panel.add(textArea);
-
 		while (true) {
 			String DNA = DNAField.getText().toUpperCase();
-			// resultLabel.setText("Genes: " + Methods.printAllGenes(DNA));
-			textArea.setText(Methods.printAllGenes(DNA));
+			textArea.setText(GeneFinder.printAllGenes(DNA));
 		}
+
 	}
 }

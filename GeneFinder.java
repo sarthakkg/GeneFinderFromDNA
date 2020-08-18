@@ -2,7 +2,7 @@
 // 11/14/2019
 // Includes all methods to find all of the genes in a strand of DNA 
 
-public class Methods {
+public class GeneFinder {
 	// finds the gene in the DNA string by calling other methods
 	public static String findGene(String DNA, int where) {
 		String emptystring = "";

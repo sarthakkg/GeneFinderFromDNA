@@ -26,7 +26,7 @@ public class UserInterface {
 		class AddDNAListener implements ActionListener {
 			public void actionPerformed(ActionEvent event) {
 				String DNA = DNAField.getText();
-				resultLabel.setText("Genes: " + Methods.printAllGenes(DNA));
+				resultLabel.setText("Genes: " + GeneFinder.printAllGenes(DNA));
 			}
 		}
 
