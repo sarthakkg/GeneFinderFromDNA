@@ -53,7 +53,7 @@ public class GeneFinder {
 			startIndex = DNA.indexOf(currentGene, startIndex) + currentGene.length();
 		}
 		// System.out.println("Total number of genes found: " + numGenes);
-		return (genes + "\nTotal number of genes found: " + numGenes);
+		return ("Total number of genes found: " + numGenes + "\n\n" + genes);
 	}
 
 	// counts the number of codons in the DNA string
